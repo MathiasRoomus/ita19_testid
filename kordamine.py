@@ -1,13 +1,21 @@
-class Mari:
+class ErrorTuliEtte(Exception):
+    pass
+
+class Inimene:
 
     def __init__(self, kaal, pikkus):
-        self.kaal = 60
-        self.pikkus = 150
+        self.kaal = kaal
+        self.pikkus = pikkus
 
-    def mari_kaal(self):
-        print(self.kaal)
+    def kmi(self):
+        if self.kaal < 0 or self.pikkus < 0:
+            raise ErrorTuliEtte
+        return self.kaal/((self.pikkus/100)**2)
 
-    def mari_pikkus(self):
-        print(self.pikkus)
+try:
+    mari = Inimene(50,156)
+    print(mari.kmi())
+except ErrorTuliEtte:
+    print("viga")
 
-ss
+

@@ -5,21 +5,22 @@ import csv
 maker = ühendus.cursor()
 
 
-maker.execute("CREAT TABLE laulud (artist text, album text, aasta text, laul text")
+#maker.execute("CREATE TABLE laulud (artist text, album text, aasta text, laul text)")
 
 tabel = []
 with open("albumid.txt", encoding="utf-8") as fail:
     fail_lugeja = csv.reader(fail, delimiter="\t")
     for row in fail_lugeja:
         tabel.append(row)
-
-artist = []
-album = []
-laul = []
-aasta = []
+        maker.execute("INSERT INTO laulud VALUES ('{0}','{1}','{2}','{3}')".format(row[0], row[1], row[2], row[3]))
 
 
-ss
+#INSERT INTO õppijad VALUES ('Indrek','Kivi')
+#"INSERT INTO laulud VALUES ('" + row[0] + "','" +
+#asi = "INSERT INTO laulud VALUES ('{}','{}','{}','{}')".format(row[0],row[1],row[2],row[3])
+#print(asi)
+
+
 
 
 
