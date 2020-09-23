@@ -10,4 +10,4 @@ class Mari:
     def mari_pikkus(self):
         print(self.pikkus)
 
-
+ss
